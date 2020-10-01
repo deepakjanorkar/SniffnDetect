@@ -1,0 +1,14 @@
+Here is the code to import the required python libraries, read an image from storage, 
+perform object detection on the image and display the image with 
+a bounding box and label about the detected objects.
+
+
+import cv2
+import matplotlib.pyplot as plt
+import cvlib as cv
+from cvlib.object_detection import draw_bbox
+im = cv2.imread('apple-256261_640.jpg')
+bbox, label, conf = cv.detect_common_objects(im)
+output_image = draw_bbox(im, bbox, label, conf)
+plt.imshow(output_image)
+plt.show()
